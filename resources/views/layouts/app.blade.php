@@ -18,10 +18,13 @@
     
     <!-- CSS Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    @yield ('styles')
 
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('js/jquery-3.5.1.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
+    @yield ('scripts')
+
 </head>
 
 <body>
@@ -77,9 +80,9 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <section class="py-4">
             @yield('content')
-        </main>
+        </section>
     </div>
 </body>
 </html>
