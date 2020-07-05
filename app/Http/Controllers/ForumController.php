@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 class ForumController extends Controller
 {
     /**
+     * Constructor untuk class ini
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -24,7 +32,7 @@ class ForumController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
