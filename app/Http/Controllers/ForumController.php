@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 
 class ForumController extends Controller
 {
-    /**
-     * Constructor untuk class ini
-     */
     public function __construct()
     {
+        /**
+         * User yang belum diautentikasi hanya dapat melihat
+         * pertanyaan saja.
+         */
         $this->middleware('auth')->except(['index', 'show']);
     }
 
