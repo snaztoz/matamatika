@@ -45,4 +45,12 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\ProfilePicture');
     }
+
+    /**
+     * Relasi One-to-Many dengan model Question.
+     */
+    public function questions()
+    {
+        return $this->hasMany('App\Question');
+    }
 }
