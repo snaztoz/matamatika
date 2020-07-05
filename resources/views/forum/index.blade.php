@@ -6,7 +6,7 @@
 		<!-- List untuk pertanyaan (question) -->
 		<div class="col-md-8">	
 			<main class="card">
-				<header class="card-header bg-light">
+				<header class="card-header">
 					<h1>Forum</h1>
 				</header>
 
