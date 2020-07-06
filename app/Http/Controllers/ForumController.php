@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ForumController extends Controller
 {
@@ -33,7 +34,7 @@ class ForumController extends Controller
      */
     public function create()
     {
-        
+        return view('forum.create');
     }
 
     /**
@@ -44,7 +45,41 @@ class ForumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Source MUNGKIN masih memiliki gambar dalam 
+        // format Base64 encoding.
+        // Ubah URL gambar yang ada menjadi URL ke 
+        // penyimpanan di server. 
+        $preprocessed_html = preg_replace_callback(
+            '/<img src="(?<source>[^"]+)">/', 
+            function($matches) {
+                list($type, $data) = explode(';', $matches['source']);
+                
+                // ekstrak tipe filenya.
+                $type = '.' . str_replace("data:image/", "", $type);
+
+                // Mendecode file terlebih dahulu.
+                list(, $data) = explode(',', $data);
+                $image = base64_decode($data);
+
+                // Dibutuhkan nama random untuk file yang akan 
+                // disimpan. Tapi perlu diperhatikan bahwa filename
+                // yang dihasilkan MASIH MUNGKIN memiliki nama
+                // yang sama (bisa dilakukan loop untuk mencari nama
+                // file yang benar-benar unik).
+                // format:
+                //      images/[NAMA_RANDOM].[ekstensi_file]
+                $filename = 'images/' . str_replace('.', 'A', uniqid(rand(), true)) . $type;
+
+                // simpan di server
+                Storage::put('public/' . $filename, $image);
+
+                // Tag akhir yang dihasilkan adalah:
+                //    <img class="server-image" src="/storage/images/[NAMA_RANDOM].[ekstensi_file]">
+                return '<img class="server-image" src="/storage/' . $filename . '">';
+            }, 
+            $request->input('content')
+        );
+        var_dump($preprocessed_html);
     }
 
     /**
