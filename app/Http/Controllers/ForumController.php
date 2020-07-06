@@ -50,12 +50,12 @@ class ForumController extends Controller
         // Ubah URL gambar yang ada menjadi URL ke 
         // penyimpanan di server. 
         $preprocessed_html = preg_replace_callback(
-            '/<img src="(?<source>[^"]+)">/', 
+            '/<img src="data:image\/(?<source>[^"]+)">/', 
             function($matches) {
                 list($type, $data) = explode(';', $matches['source']);
                 
                 // ekstrak tipe filenya.
-                $type = '.' . str_replace("data:image/", "", $type);
+                $type = strtolower('.' . $type);
 
                 // Mendecode file terlebih dahulu.
                 list(, $data) = explode(',', $data);
