@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->timestamps();
+            // menyimpan isi dari pertanyaan
             $table->text('content');
         });
     }
