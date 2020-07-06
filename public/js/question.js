@@ -19,9 +19,11 @@ $('#question-submit-button').click(function(event) {
 	event.preventDefault();
 
 	// cek apakah isi pertanyaan kosong
-	if (!editor.getText().replace(/\s/g, '').length) {
+	if (!editor.getText().trim().length 
+		&& !editor.container.firstChild.innerHTML.includes("img")) 
+	{
 		$('#question-typing-area-empty-message').addClass('d-inline');
-		return;
+		return;			
 	}
 
 	$('#question-hidden-textarea').val(editor.root.innerHTML);
