@@ -21,8 +21,8 @@
 						@csrf
 
 						<div class="form-group container">
-							<label for="title" class="">Judul pertanyaan</label>
-							<input name="title" value="{{ old('title') }}" placeholder="judul akan ditampilkan di halaman utama forum" class="form-control">	
+							<label for="title">Judul pertanyaan</label>
+							<input name="title" value="{{ old('title') }}" placeholder="judul akan ditampilkan di halaman utama forum" class="form-control" required>	
 						</div>						
 
 						<div class="form-group container">
