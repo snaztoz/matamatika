@@ -5,11 +5,6 @@ var editor = new Quill('#question-typing-area', {
 				['bold', 'italic', 'underline'],
 				['image', 'link']
 			],
-
-			// Custom image handler
-			handlers: {
-				'image': imageHandler
-			}
 		}
 	},
 	placeholder: 'Tulis pertanyaanmu di sini',
