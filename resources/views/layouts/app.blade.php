@@ -18,6 +18,9 @@
     
     <!-- CSS Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/quill.core.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/quill.snow.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     @yield ('styles')
 
     <!-- Scripts -->
