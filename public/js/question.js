@@ -17,6 +17,13 @@ var editor = new Quill('#question-typing-area', {
  */
 $('#question-submit-button').click(function(event) {
 	event.preventDefault();
+
+	// cek apakah isi pertanyaan kosong
+	if (!editor.getText().replace(/\s/g, '').length) {
+		$('#question-typing-area-empty-message').addClass('d-inline');
+		return;
+	}
+
 	$('#question-hidden-textarea').val(editor.root.innerHTML);
 	$('#question-form').submit();
 })

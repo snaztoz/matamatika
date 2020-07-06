@@ -30,6 +30,7 @@
 							<div id="question-typing-area">
 								<!-- displaying text editor -->
 							</div>
+							<small id="question-typing-area-empty-message" class="text-danger d-none">*Isi pertanyaan tidak boleh kosong</small>
 						</div>
 
 						<!-- hidden textarea -->
