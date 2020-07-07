@@ -14,7 +14,7 @@
 					<h1>Forum</h1>
 				</header>
 
-				<content class="card-body">
+				<section class="card-body">
 					<h4 class="mb-4">Ada yang ingin ditanyakan? Tuliskan pertanyaanmu!</h4>
 
 					<form method="POST" action="{{ route('forum.store') }}" id="question-form">
@@ -41,7 +41,7 @@
 						</div>
 						
 					</form>
-				</content>
+				</section>
 			</main>
 		</div>
 

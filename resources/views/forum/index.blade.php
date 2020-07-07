@@ -10,7 +10,7 @@
 					<h1>Forum</h1>
 				</header>
 
-				<content class="card-body">
+				<section class="card-body">
 					<!-- Template untuk setiap pertanyaan yang ada -->
 					<article class="card mb-4">
 						<div class="card-body pb-2">
@@ -41,7 +41,7 @@
 							<a class="stretched-link" href="#">Lihat pertanyaan</a>
 						</div>
 					</article>
-				</content>
+				</section>
 
 				<footer class="card-footer">
 					1 2 3 ...
