@@ -1,3 +1,10 @@
+.root {
+	min-height: 100vh;
+	background-image: url('/storage/images/background.png');
+	background-repeat: repeat-y;
+	background-size: cover;
+}
+
 #question-typing-area {
 	min-height: 100px;
 }
