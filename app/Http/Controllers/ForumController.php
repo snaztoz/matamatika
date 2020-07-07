@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
 {
@@ -45,6 +46,11 @@ class ForumController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+
         // Source MUNGKIN masih memiliki gambar dalam 
         // format Base64 encoding.
         // Ubah URL gambar yang ada menjadi URL ke 
@@ -79,7 +85,15 @@ class ForumController extends Controller
             }, 
             $request->input('content')
         );
-        var_dump($preprocessed_html);
+
+        // Simpan di database
+        $question = new Question;
+        $question->user_id = Auth::id();
+        $question->title = $request->input('title');
+        $question->content = $preprocessed_html;
+        $question->save();
+
+        return redirect()->route('forum.show', ['question' => $question]);
     }
 
     /**
@@ -90,7 +104,7 @@ class ForumController extends Controller
      */
     public function show(Question $question)
     {
-        //
+        return view('forum.show', ['question' => $question]);
     }
 
     /**
