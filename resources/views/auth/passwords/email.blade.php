@@ -31,8 +31,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mt-4 mb-0">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="form-group mt-4 mb-0">
+                            <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary">
                                     Kirim Link
                                 </button>
