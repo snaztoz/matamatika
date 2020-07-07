@@ -1,3 +1,12 @@
 #question-typing-area {
 	min-height: 100px;
 }
+
+#answer-typing-area {
+	min-height: 75px;
+}
+
+.server-image {
+	width: 100%;
+	height: auto;
+}
