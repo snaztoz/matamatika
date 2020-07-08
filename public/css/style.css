@@ -11,12 +11,13 @@
 /* Color pallette yang digunakan. */
 .site-bg-blue 	{ background-color: #309B9C; }
 .site-bg-red 	{ background-color: #8C0703; }
+.site-bg-grey	{ background-color: #F3F8E9; }
 
 /* Karena style bawaan untuk .border-warning dari 
  * bootstrap sangat tipis garisnya.
  */
 .site-border-left-yellow {
-	border-left: 2px solid #FFC107;
+	border-left: 2px solid #8C0703;
 }
 
 /**
@@ -53,4 +54,9 @@
 /* Untuk menumpulkan border-radius dari element */
 .site-border-radius-rounded-topleft {
 	border-radius: 1.5rem 0.25rem 0.25rem 0.25rem;
+}
+
+/* Membuat bentuk sebuah element menjadi lingkaran */
+.site-shape-circle {
+	border-radius: 50%;
 }
