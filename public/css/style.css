@@ -16,7 +16,7 @@
 /* Karena style bawaan untuk .border-warning dari 
  * bootstrap sangat tipis garisnya.
  */
-.site-border-left-yellow {
+.site-border-left-red {
 	border-left: 2px solid #8C0703;
 }
 
@@ -37,6 +37,22 @@
 .server-image {
 	width: 100%;
 	height: auto;
+}
+
+/* Untuk tulisan yang ada di samping logo website
+ * pada navbar.
+ */
+.site-navbar-brand-name {
+	position: relative;
+	top: 0.15rem;
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* Sedikit menggeser posisi gambar (vertikal) */
+.site-navbar-user-image {
+	position: relative;
+	top: -0.15rem;
 }
 
 /**
