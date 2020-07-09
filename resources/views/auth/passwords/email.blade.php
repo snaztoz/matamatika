@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-4">
             <div class="card">
-                <div class="card-header text-center">Atur Ulang Password</div>
+                <div class="card-header text-center site-bg-blue text-light">Atur Ulang Password</div>
 
                 <div class="card-body">
                     @if (session('status'))

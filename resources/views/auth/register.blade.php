@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-4">
             <div class="card">
-                <div class="card-header text-center">Daftar</div>
+                <div class="card-header text-center site-bg-blue text-light">Daftar</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
