@@ -60,8 +60,10 @@
 
 					<!-- Replying box -->
 					<div class="p-0 pl-2 pr-2">
-						<div class="reply-typing-area"></div>
-						<button id="reply-to-2432" class="btn btn-secondary">Balas</button>
+						<form method="POST" action="#" class="d-flex">
+							<textarea name="content" placeholder="Berikan balasan..." class="reply-typing-area d-block col-md-8 mr-2"></textarea>
+							<input type="submit" value="Balas" class="btn btn-secondary d-block align-self-end">
+						</form>
 					</div>
 				</section>
 			</div>
@@ -80,8 +82,10 @@
 				<section class="site-replies d-none container site-border-left-red site-bg-grey pt-2 pb-2 mt-2 ml-3">
 					<!-- Replying box -->
 					<div class="p-0 pl-2 pr-2">
-						<div class="reply-typing-area"></div>
-						<button id="reply-to-2432" class="btn btn-secondary">Balas</button>
+						<form method="POST" action="#" class="d-flex">
+							<textarea name="content" placeholder="Berikan balasan..." class="reply-typing-area d-block col-md-8 mr-2"></textarea>
+							<input type="submit" value="Balas" class="btn btn-secondary d-block align-self-end">
+						</form>
 					</div>
 				</section>
 			</div>

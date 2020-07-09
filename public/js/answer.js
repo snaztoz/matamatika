@@ -14,13 +14,6 @@ var answerEditor = new Quill('#answer-typing-area', {
 	theme: 'snow'
 });
 
-/* Editor untuk menuliskan balasan terhadap jawaban-jawaban
- * yang ada.
- * Mengingat satu editor hanya dapat dipasang di satu object,
- * maka penggunaan editor ini akan sedikit berbeda. 
- */
-var replyEditor;
-
 /* Membuka dan menutup bagian balasan dari jawaban
  * tertentu.
  */
@@ -28,5 +21,15 @@ $('.site-replies-show-button').each(function() {
 	$(this).click(event => {
 		event.preventDefault();
 		$(this).siblings('.site-replies').toggleClass('d-block');
+	});
+});
+
+/* Membuat reply typing area menjadi resize secara
+ * otomatis ketika tulisan melebihi ukuran box.
+ */
+$('.reply-typing-area').each(function() {
+	$(this).on('input', function() {
+		this.style.height = '2.5rem';
+		this.style.height = `${this.scrollHeight}px`;
 	});
 });
