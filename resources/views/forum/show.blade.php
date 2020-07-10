@@ -27,7 +27,7 @@
 
 <section class="container">
 	<div class="pt-3">
-		<h4>2 jawaban</h4>
+		<h4>{{ $question->answers->count() }} jawaban</h4>
 
 		<!-- All answers -->
 		<div class="mt-4">
@@ -37,7 +37,7 @@
 					<img class="site-shape-circle" src="{{ asset('storage/images/default_user.png') }}" width="30px" height="30px" alt="user">
 					<p class="ml-2">{{ $answer->user->name }}</p>
 				</div>
-				
+
 				{!! $answer->content !!}
 				
 				<a href="#" class="site-replies-show-button d-inline-block text-dark ">
