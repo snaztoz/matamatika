@@ -14,6 +14,22 @@ var answerEditor = new Quill('#answer-typing-area', {
 	theme: 'snow'
 });
 
+/* Mencegah jawaban kosong yang disubmit. */
+$('#answer-submit-button').click(function(event) {
+	event.preventDefault();
+
+	// cek apakah isi jawaban kosong
+	if (!answerEditor.getText().trim().length 
+		&& !answerEditor.container.firstChild.innerHTML.includes("img")) 
+	{
+		$('#answer-typing-area-empty-message').addClass('d-inline');
+		return;			
+	}
+
+	$('#answer-hidden-textarea').val(answerEditor.root.innerHTML);
+	$('#answer-form').submit();
+})
+
 /* Membuka dan menutup bagian balasan dari jawaban
  * tertentu.
  */
