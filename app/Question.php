@@ -11,7 +11,7 @@ class Question extends Model
 	 */
     public function user()
     {
-    	$this->belongsTo('App\User');
+    	return $this->belongsTo('App\User');
     }
 
     /**
@@ -19,6 +19,6 @@ class Question extends Model
      */
     public function answers()
     {
-    	$this->hasMany('App\Answer');
+    	return $this->hasMany('App\Answer');
     }
 }
