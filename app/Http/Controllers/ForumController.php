@@ -25,7 +25,9 @@ class ForumController extends Controller
      */
     public function index()
     {
-        return view('forum.index');
+        $questions = Question::paginate(3);
+
+        return view('forum.index', ['questions' => $questions]);
     }
 
     /**
