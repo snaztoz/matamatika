@@ -24,3 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('forum', 'ForumController')->parameters([
 	'forum' => 'question'
 ]);
+
+Route::resource('forum.answers', 'AnswerController')->shallow();
