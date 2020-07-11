@@ -25,4 +25,6 @@ Route::resource('forum', 'ForumController')->parameters([
 	'forum' => 'question'
 ]);
 
+/* Mungkin rute-rute ini dapat dijadikan API saja? */
 Route::resource('forum.answers', 'AnswerController')->shallow();
+Route::resource('answer.replies', 'ReplyController')->shallow();
