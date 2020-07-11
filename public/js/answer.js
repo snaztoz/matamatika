@@ -49,3 +49,18 @@ $('.reply-typing-area').each(function() {
 		this.style.height = `${this.scrollHeight}px`;
 	});
 });
+
+/* Memastikan reply typing area tidak kosong ketika
+ * balasan disubmit.
+ */
+$('.reply-submit-button').each(function() {
+	$(this).click(event => {
+		if ($(this).siblings('textarea').val().trim() === '') {
+			event.preventDefault();
+			$(this).parent()
+					.siblings('.reply-textarea-empty-message')
+					.addClass('d-inline');
+			return;
+		}
+	});
+});
