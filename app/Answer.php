@@ -21,4 +21,12 @@ class Answer extends Model
     {
     	return $this->belongsTo('App\Question');
     }
+
+    /**
+     * Balasan untuk jawaban terkait
+     */
+    public function replies()
+    {
+        return $this->hasMany('App\Reply');
+    }
 }

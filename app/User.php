@@ -61,4 +61,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Answer');
     }
+
+    /**
+     * Relasi One-to-Many dengan model Reply
+     */
+    public function replies()
+    {
+        return $this->hasMany('App\Reply');
+    }
 }
