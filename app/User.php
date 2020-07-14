@@ -69,4 +69,13 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Reply');
     }
+
+    /**
+     * Mengambil kegiatan mentoring yang diikuti oleh
+     * user terkait
+     */
+    public function mentorings()
+    {
+        return $this->belongsToMany('App\Mentoring');
+    }
 }
