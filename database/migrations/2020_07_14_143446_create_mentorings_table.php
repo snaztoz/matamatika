@@ -13,7 +13,7 @@ class CreateMentoringsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mentoring', function (Blueprint $table) {
+        Schema::create('mentorings', function (Blueprint $table) {
             $table->id();
             $table->string('description', 256);
             $table->boolean('is_done');
@@ -28,6 +28,6 @@ class CreateMentoringsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mentoring');
+        Schema::dropIfExists('mentorings');
     }
 }
