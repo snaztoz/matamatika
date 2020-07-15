@@ -25,6 +25,8 @@ Route::resource('forum', 'ForumController')->parameters([
 	'forum' => 'question'
 ]);
 
+Route::resource('mentoring', 'MentoringController');
+
 Route::get('/profile', 'UserProfileController@user_profile')->name('profile');
 
 /* Mungkin rute-rute ini dapat dijadikan API saja? */
