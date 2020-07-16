@@ -20,6 +20,10 @@
 	border-left: 2px solid #8C0703;
 }
 
+.site-border-top-grey {
+	border-top: 2px solid #CCCCCC; 
+}
+
 /**
  * Untuk mengatur ukuran dari tiap jenis editor 
  * yang ada pada website.
