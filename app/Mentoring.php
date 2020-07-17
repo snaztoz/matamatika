@@ -24,4 +24,13 @@ class Mentoring extends Model
     {
     	return $this->belongsToMany('App\User');
     }
+
+    /**
+     * Mengambil pesan-pesan yang dibuat terkait kegiatan
+     * mentoring tertentu.
+     */
+    public function mails()
+    {
+        return $this->hasMany('App\MentoringMail');
+    }
 }
