@@ -25,9 +25,7 @@ $('#mentoring-submit-button').click(function(event) {
 		return;
 	}
 
-	event.preventDefault();
 	$('#mentoring-desc-typing-area').val(
 		$('#mentoring-desc-typing-area').val().split('\n').join('<br>')
 	);
-	console.log($('#mentoring-desc-typing-area').val());
 });

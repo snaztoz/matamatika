@@ -9,26 +9,28 @@
 	<article class="card">
 		<div class="card-body">
 			<h5>{{ $mentoring->title }}</h5>
+			<p>{{ $mentoring->description }}</p>
 
 		@if (Auth::check() && Auth::user()->name === 'admin')
 			<a href="{{ route('mentoring.show', ['mentoring' => $mentoring] )}}"
-				class="stretched-link">
-				Update Berita
+				class="btn btn-info">
+				Update+
 				</a>
-		@endif
-
-		@if ($mentoring->users->contains(Auth::user()))
-			<form method="POST" action="#">
-				@csrf
-				<input type="submit" value="Batalkan Mentoring" class="btn btn-secondary">
-			</form>
 
 		@else
-			<form method="POST" action="#">
-				@csrf
-				<input type="submit" name="Gabung Mentoring" class="btn btn-primary">
-			</form>
+			@if ($mentoring->users->contains(Auth::user()))
+				<form method="POST" action="#">
+					@csrf
+					<input type="submit" value="Batalkan Mentoring" class="btn btn-secondary">
+				</form>
 
+			@else
+				<form method="POST" action="#" class="d-inline-block">
+					@csrf
+					<input type="submit" value="Gabung Mentoring" class="btn btn-primary">
+				</form>
+
+			@endif
 		@endif
 		</div>
 	</article>
