@@ -21,7 +21,7 @@ class MentoringController extends Controller
      */
     public function index()
     {
-        $mentorings = Mentoring::all();
+        $mentorings = Mentoring::where('is_done', false)->get();
         return view('mentoring.index', ['mentorings' => $mentorings]);
     }
 
@@ -50,6 +50,18 @@ class MentoringController extends Controller
         if (Gate::denies('access-mentoring-backend')) {
             return redirect()->route('mentoring.index');
         }
+
+        $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required|max:255'
+        ]);
+
+        $mentoring = new Mentoring;
+        $mentoring->title = $request->input('title');
+        $mentoring->description = $request->input('content');
+        $mentoring->save();
+
+        return redirect()->route('mentoring.show', ['mentoring' => $mentoring]);
     }
 
     /**
@@ -64,7 +76,16 @@ class MentoringController extends Controller
             return redirect()->route('mentoring.index');
         }
         
-        return view('mentoring.show', ['mentoring' => $mentoring]);
+        if ($mentoring->mails->count() != 0) {
+            $latest_mail = $mentoring->mails->latest();
+        } else {
+            $latest_mail = '';
+        }
+
+        return view('mentoring.show', [
+            'mentoring' => $mentoring,
+            'latest_mail' => $latest_mail
+        ]);
     }
 
     /**
