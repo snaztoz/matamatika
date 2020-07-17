@@ -96,9 +96,8 @@ class MentoringController extends Controller
      */
     public function edit(Mentoring $mentoring)
     {
-        if (Gate::denies('access-mentoring-backend')) {
-            return redirect()->route('mentoring.index');
-        }
+        // Sepertinya route 'edit' ini tidak diperlukan?
+        return redirect()->route('mentoring.index');
     }
 
     /**
@@ -110,9 +109,8 @@ class MentoringController extends Controller
      */
     public function update(Request $request, Mentoring $mentoring)
     {
-        if (Gate::denies('access-mentoring-backend')) {
-            return redirect()->route('mentoring.index');
-        }
+        // Sepertinya route 'update' ini tidak diperlukan?
+        return redirect()->route('mentoring.index');
     }
 
     /**
@@ -126,5 +124,12 @@ class MentoringController extends Controller
         if (Gate::denies('access-mentoring-backend')) {
             return redirect()->route('mentoring.index');
         }
+
+        // Kegiatan mentoring dihapus dengan cara ditandai
+        // sebagai 'sudah selesai'.
+        $mentoring->is_done = true;
+        $mentoring->save();
+
+        return redirect()->route('mentoring.index');
     }
 }
