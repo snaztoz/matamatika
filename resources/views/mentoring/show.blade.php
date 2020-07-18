@@ -10,6 +10,10 @@
 <h3>{{ $mentoring->title }}</h3>
 
 <div class="site-border-top-grey mt-3 p-3">
+
+	<p class="h6 mb-2">Deskripsi:</p>
+	<h5 class="mb-5">{{ $mentoring->description }}</h5>
+
 	<form method="POST" action="#">
 		@csrf
 		<div class="form-group">
