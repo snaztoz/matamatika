@@ -19,13 +19,15 @@
 
 		@else
 			@if ($mentoring->users->contains(Auth::user()))
-				<form method="POST" action="#">
+				<form method="POST" class="d-inline-block" 
+						action="{{ route('mentoring-unregister', ['mentoring' => $mentoring]) }}">
 					@csrf
 					<input type="submit" value="Batalkan Mentoring" class="btn btn-secondary">
 				</form>
 
 			@else
-				<form method="POST" action="#" class="d-inline-block">
+				<form method="POST" class="d-inline-block"
+						action="{{ route('mentoring-register', ['mentoring' => $mentoring]) }}">
 					@csrf
 					<input type="submit" value="Gabung Mentoring" class="btn btn-primary">
 				</form>
