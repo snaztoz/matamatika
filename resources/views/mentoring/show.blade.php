@@ -14,7 +14,7 @@
 	<p class="h6 mb-2">Deskripsi:</p>
 	<h5 class="mb-5">{{ $mentoring->description }}</h5>
 
-	<form method="POST" action="#">
+	<form method="POST" action="{{ route('mentoring-update', ['mentoring' => $mentoring]) }}">
 		@csrf
 		<div class="form-group">
 			<label for="mentoring-email-typing-area">Tulis Email</label>
