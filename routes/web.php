@@ -27,11 +27,17 @@ Route::get('profile', 'UserProfileController@user_profile')->name('profile');
  * Rute untuk melakukan registrasi kegiatan mentoring.
  */
 Route::prefix('mentoring-registration')->group(function() {
-	Route::post('register/{mentoring}', 'MentoringRegistrationController@register')
+	Route::post('{mentoring}/register', 'MentoringRegistrationController@register')
 			->name('mentoring-register');
-	Route::post('unregister/{mentoring}', 'MentoringRegistrationController@unregister')
+	Route::post('{mentoring}/unregister', 'MentoringRegistrationController@unregister')
 			->name('mentoring-unregister');
 });
+
+/**
+ * Penyimpanan email baru terkait kegiatan mentoring tertentu.
+ */
+Route::post('mentoring-update/{mentoring}', 'MentoringEmailController@store')
+		->name('mentoring-update');
 	
 Route::resource('forum', 'ForumController')->parameters([
 	'forum' => 'question'
