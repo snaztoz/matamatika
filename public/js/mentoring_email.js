@@ -1,32 +1,31 @@
-let mentoringEmailEditor = new Quill('#mentoring-email-typing-area', {
-	modules: {
-		toolbar: {
-			container: [
-				[{'header': 1}, {'header': 2}],
-				['bold', 'italic', 'underline'],
-				['link']
-			],
-		}
-	},
-	placeholder: 'Tuliskan email',
-	theme: 'snow'
-});
-
 $('#mentoring-email-submit').click(function(event) {
-	// mencegah isi email kosong
-	if (!mentoringEmailEditor.getText().trim().length) {
+	/* Mencegah isi email yang dikirimkan hanya berupa
+	 * pesan kosong.
+	 */
+	if (!$('#mentoring-email-typing-area').val().trim().length) {
 		event.preventDefault();
 		$('#mentoring-email-typing-area-empty-message').addClass('d-inline');
 		return;
 	}
-
-	$('#mentoring-email-hidden-textarea')
-			.val(mentoringEmailEditor.root.innerHTML);
 });
 
 /**
- * Mengisi text editor ketika page pertama kali dimuat 
- * dengan isi dari email yang terakhir kali dikirim.
+ * Ukuran dari text editor dapat berubah sesuai dengan konten
+ * yang ada di dalamnya.
  */
-mentoringEmailEditor.root.innerHTML = 
-		$('#mentoring-email-hidden-textarea').val();
+$('#mentoring-email-typing-area').on("input", function() {
+	this.style.height = '2.5rem';
+	this.style.height = `${this.scrollHeight}px`;
+});
+
+
+$(document).ready(function() {
+	/**
+	 * Menyesuaikan ukuran text editor dengan konten ketika page 
+	 * pertama kali dimuat.
+	 */
+	$('#mentoring-email-typing-area').css(
+			'height', 
+			$('#mentoring-email-typing-area').prop('scrollHeight')
+	);
+});
