@@ -19,6 +19,12 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
             'App\Listeners\CreateUserProfilePictureModel'
         ],
+        'App\Events\NewMentoringMail' => [
+            'App\Listeners\NewEmailSend'
+        ],
+        'App\Events\NewUserRegisterMentoring' => [
+            'App\Listeners\SingleEmailSend'
+        ]
     ];
 
     /**
