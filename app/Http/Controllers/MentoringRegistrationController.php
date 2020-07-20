@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mentoring;
+use App\Events\NewUserRegisterMentoring;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +20,8 @@ class MentoringRegistrationController extends Controller
     public function register(Mentoring $mentoring)
     {
     	$mentoring->users()->attach(Auth::id());
+        event(new NewUserRegisterMentoring($mentoring, Auth::user()));
+        
     	return redirect()->route('mentoring.index');
     }
 
