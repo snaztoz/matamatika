@@ -2,7 +2,7 @@
 
 @section ('scripts')
 <script src="{{ asset('js/quill/quill.min.js') }}" defer></script>
-<script src="{{ asset('js/mentoring_create.js') }}" defer></script>
+<script src="{{ asset('js/mentoring_email.js') }}" defer></script>
 @endsection
 
 @section ('main')
@@ -24,7 +24,7 @@
 			<small id="mentoring-email-typing-area-empty-message" class="text-danger d-none">*Isi email tidak boleh kosong</small>
 		</div>
 
-		<textarea id="mentoring-email-hidden-textarea" name="mail" hidden>{{ $latest_mail }}</textarea>
+		<textarea id="mentoring-email-hidden-textarea" name="mail" hidden>{!! $latest_mail->content !!}</textarea>
 
 		<input type="submit" value="Kirim Email*" id="mentoring-email-submit" class="btn btn-primary">
 		<small class="d-block mt-2 text-info">

@@ -77,7 +77,7 @@ class MentoringController extends Controller
         }
         
         if ($mentoring->mails->count() != 0) {
-            $latest_mail = $mentoring->mails->latest();
+            $latest_mail = $mentoring->mails()->latest()->first();
         } else {
             $latest_mail = '';
         }
