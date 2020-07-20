@@ -34,6 +34,6 @@ class MentoringUpdate extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.mentoring_update');
+        return $this->text('mails.mentoring_update');
     }
 }
