@@ -48,7 +48,7 @@
                             <a class="nav-link text-light" href="{{ route('forum.index') }}">Forum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Mentoring</a>
+                            <a class="nav-link text-light" href="{{ route('mentoring.index') }}">Mentoring</a>
                         </li>
                     </ul>
 
