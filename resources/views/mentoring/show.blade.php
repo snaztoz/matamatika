@@ -1,6 +1,7 @@
 @extends ('mentoring.base')
 
 @section ('scripts')
+<script src="{{ asset('js/quill/quill.min.js') }}" defer></script>
 <script src="{{ asset('js/mentoring_email.js') }}" defer></script>
 @endsection
 
@@ -17,10 +18,10 @@
 		@csrf
 		<div class="form-group">
 			<label for="mentoring-email-typing-area">Tulis Email:</label>
-			<textarea id="mentoring-email-typing-area" class="form-control w-100" name="mail">
-				{!! $latest_mail->content !!}</textarea>
+			<div id="mentoring-email-typing-area"></div>
 			<small id="mentoring-email-typing-area-empty-message" class="text-danger d-none">*Isi email tidak boleh kosong</small>
 		</div>
+		<textarea id="mentoring-email-hidden-textarea" name="mail" hidden>{{ $latest_mail->content }}</textarea>
 
 		<input type="submit" value="Kirim Email*" id="mentoring-email-submit" class="btn btn-primary">
 		<small class="d-block mt-2 text-info">
