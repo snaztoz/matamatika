@@ -6,11 +6,17 @@
 @endsection
 
 @section ('main')
-<div class="container">
-	<a href="{{ route('forum.index') }}" class="text-dark">&#8592; Kembali</a>
+<div class="container mb-4">
+	<a href="{{ route('forum.index') }}"
+			class="btn btn-outline-dark btn-sm align-middle">&#8592; Kembali</a>
 </div>
 
-<article class="container mt-3">
+<article class="container">
+	<div class="container pl-0 d-flex align-items-center mb-3">
+		<img class="site-shape-circle" width="30px" height="30px"
+			src="{{ $question->user->profile_picture->profile_picture_link }}" alt="user">
+		<p class="ml-2 mb-0">{{ $question->user->name }}</p>
+	</div>
 	<h2 class="mb-3">{{ $question->title }}</h2>
 	{!! $question->content !!}	
 </article>
@@ -36,14 +42,15 @@
 		<div class="mt-4">
 		@forelse ($question->answers as $answer)
 			<div class="mb-4">
-				<div class="container pl-0 d-flex">
-					<img class="site-shape-circle" src="{{ asset('storage/images/default_user.png') }}" width="30px" height="30px" alt="user">
-					<p class="ml-2">{{ $answer->user->name }}</p>
+				<div class="container pl-0 d-flex align-items-center mb-2">
+					<img class="site-shape-circle" width="30px" height="30px"
+						src="{{ $answer->user->profile_picture->profile_picture_link }}"  alt="user">
+					<p class="ml-2 mb-0">{{ $answer->user->name }}</p>
 				</div>
 
 				{!! $answer->content !!}
 				
-				<a href="#" class="site-replies-show-button d-inline-block text-dark ">
+				<a href="#" class="site-replies-show-button d-inline-block text-dark">
 					<small class="d-block">{{ $answer->replies->count() }} balasan <span class="small">&#9660;</span></small>
 				</a>
 
@@ -51,9 +58,10 @@
 		
 				@forelse ($answer->replies as $reply)
 					<div class="p-0 pl-2 pr-2 mb-4">
-						<div class="container pl-0 d-flex">
-							<img class="site-shape-circle" src="{{ asset('storage/images/default_user.png') }}" width="30px" height="30px" alt="user">
-							<p class="ml-2">{{ $reply->user->name }}</p>
+						<div class="container pl-0 d-flex align-items-center mb-2">
+							<img class="site-shape-circle" width="30px" height="30px" alt="user"
+								src="{{ $reply->user->profile_picture->profile_picture_link }}" >
+							<p class="ml-2 mb-0">{{ $reply->user->name }}</p>
 						</div>
 						<p>{{ $reply->content }}</p>
 					</div>
