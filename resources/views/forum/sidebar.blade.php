@@ -1,10 +1,22 @@
 <div class="col-4 d-none d-md-block">
 	<aside class="card site-border-radius-rounded-topleft">
-		<content class="card-body pt-5">
+		<div class="card-body pt-5">
 			<h5 class="site-title-section site-bg-red text-light">Mentoring</h5>
 			<ol class="pl-3">
-				<li><a href="#">Kelas online untuk materi limit kelas XI</a></li>
+			@forelse ($mentorings as $mentoring)
+				<li><a href="{{ route('mentoring.index') }}">{{ $mentoring->title }}</a></li>	
+
+			@empty
+				<p><i>Tidak ada kegiatan mentoring</i></p>
+
+			@endforelse
 			</ol>
-		</content>
+
+			@if ($mentorings->count())
+			<p class="container">
+				<a class="btn btn-outline-info btn-sm" href="{{ route('mentoring.index') }}">Lihat Selengkapnya</a></p>
+			@endif
+
+		</div>
 	</aside>
 </div>

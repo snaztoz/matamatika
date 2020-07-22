@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mentoring;
 use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -27,7 +28,10 @@ class ForumController extends Controller
     {
         $questions = Question::paginate(3);
 
-        return view('forum.index', ['questions' => $questions]);
+        return view('forum.index', [
+            'questions' => $questions,
+            'mentorings' => Mentoring::where('is_done', false)->limit(3)->get(),
+        ]);
     }
 
     /**
@@ -37,7 +41,9 @@ class ForumController extends Controller
      */
     public function create()
     {
-        return view('forum.create');
+        return view('forum.create', [
+            'mentorings' => Mentoring::where('is_done', false)->limit(3)->get(),
+        ]);
     }
 
     /**
@@ -106,7 +112,10 @@ class ForumController extends Controller
      */
     public function show(Question $question)
     {
-        return view('forum.show', ['question' => $question]);
+        return view('forum.show', [
+            'question' => $question,
+            'mentorings' => Mentoring::where('is_done', false)->limit(3)->get(),
+        ]);
     }
 
     /**
