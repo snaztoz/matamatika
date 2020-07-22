@@ -26,7 +26,7 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $questions = Question::paginate(3);
+        $questions = Question::latest()->paginate(8);
 
         return view('forum.index', [
             'questions' => $questions,
