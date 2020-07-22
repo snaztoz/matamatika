@@ -11,13 +11,14 @@
 <section class="site-border-top-grey p-2 py-3">
 @forelse ($questions as $question)
 	<article class="card mb-4">
-		<div class="card-body pb-2">
-			<div class="container pl-0 d-flex">
-				<img class="site-shape-circle" src="{{ asset('storage/images/default_user.png') }}" width="30px" height="30px" alt="user">
-				<p class="ml-2">{{ $question->user->name }}</p>
+		<div class="card-body pb-1">
+			<div class="container pl-0 d-flex align-items-center mb-2">
+				<img class="site-shape-circle" width="30px" height="30px"
+					src="{{ $question->user->profile_picture->profile_picture_link }}" alt="user">
+				<p class="ml-2 mb-0">{{ $question->user->name }}</p>
 			</div>
 			<h4>{{ $question->title }}</h4>
-			<p class="mb-2">{{ $question->answers->count() }} jawaban</p>
+			<p class="d-inline-block mr-2">{{ $question->answers->count() }} jawaban</p>
 			<!-- hidden-link -->
 			<a class="stretched-link" href="{{ route('forum.show', ['question' => $question]) }}">Lihat pertanyaan</a>
 		</div>
