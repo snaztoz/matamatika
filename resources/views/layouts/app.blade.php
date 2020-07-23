@@ -67,7 +67,10 @@
                         @else
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="#">
-                                    <img class="site-shape-circle site-navbar-user-image d-none d-md-inline" src="{{ asset('storage/images/me.jpg') }}" width="30px" height="30px" alt="user"><span class="ml-md-2">{{ Auth::user()->name }}</span>
+                                    <img class="site-shape-circle site-navbar-user-image d-none d-md-inline border border-light" 
+                                    src="{{ Auth::user()->profile_picture->profile_picture_link }}" 
+                                    width="30px" height="30px" alt="user">
+                                    <span class="ml-md-2">{{ Auth::user()->name }}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
