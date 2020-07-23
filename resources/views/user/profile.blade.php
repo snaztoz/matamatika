@@ -44,7 +44,7 @@
 				@endforelse
 				</div>
 
-				<a class="btn btn-secondary text-light mb-4" href="{{ route('forum.create') }}">Ajukan Pertanyaan</a>
+				<a class="btn btn-outline-info mb-4" href="{{ route('forum.create') }}">Ajukan Pertanyaan</a>
 			</section>
 
 			<section class="p-1 col-md-6">
@@ -55,7 +55,7 @@
 
 				</div>
 
-				<a class="btn btn-secondary text-light mb-4" href="#">Lihat Daftar Mentoring</a>
+				<a class="btn btn-outline-secondary mb-4" href="#">Lihat Daftar Mentoring</a>
 			</section>
 		</div>
 	</main>	
