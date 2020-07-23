@@ -22,9 +22,9 @@
 			</div>
 		</section>
 
-		<div class="card-body p-4 d-md-flex">
-			<section class="p-1 col-md-6 mr-md-4">
-				<h5 class="mb-4">Daftar pertanyaan</h5>
+		<div class="card-body py-4 px-2 d-md-flex justify-content-center">
+			<section class="col-md-6 mr-md-3 mb-4 mb-md-0">
+				<h5 class="mb-4"><strong class="text-secondary"><i>Daftar pertanyaan</i></strong></h5>
 
 				<div class="mb-4">
 				@forelse (Auth::user()->questions as $question)
@@ -34,7 +34,7 @@
 								<a href="{{ route('forum.show', ['question' => $question]) }}"
 								class="stretched-link text-dark">
 								{{ $question->title }}</a></p>
-							<small>2 Agustus 2020, {{ $question->answers->count() }} jawaban</small>
+							<small>{{ $question->answers->count() }} jawaban</small>
 						</div>
 					</div>
 
@@ -44,16 +44,27 @@
 				@endforelse
 				</div>
 
-				<a class="btn btn-outline-info mb-4" href="{{ route('forum.create') }}">Ajukan Pertanyaan</a>
+				<a class="btn btn-outline-info mb-4" href="{{ route('forum.create') }}">
+					Ajukan Pertanyaan
+				</a>
 			</section>
 
-			<section class="p-1 col-md-6">
-				<h5 class="mb-4">Kegiatan mentoring</h5>
+			<section class="col-md-6">
+				<h5 class="mb-4"><strong><i class="text-secondary">Kegiatan mentoring</i></strong></h5>
 
-				<div>
-					<p><i>Wah, belum ada fitur mentoring nih :(</i></p>
+				<ol class="pl-4 mb-4">
+				@forelse (Auth::user()->mentorings->all() as $mentoring)
+					<li class="h5">
+						<a href="{{ route('mentoring.index') }}" class="text-dark">
+							{{ $mentoring->title }}
+						</a>
+					</li>
+		
+				@empty
+					<p><i>Belum ada kegiatan mentoring yang diikuti</i></p>
 
-				</div>
+				@endforelse
+				</ol>
 
 				<a class="btn btn-outline-secondary mb-4" href="#">Lihat Daftar Mentoring</a>
 			</section>
