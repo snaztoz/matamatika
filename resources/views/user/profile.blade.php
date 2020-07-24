@@ -80,7 +80,9 @@
 				@endforelse
 				</ol>
 
-				<a class="btn btn-outline-secondary mb-4" href="#">Lihat Daftar Mentoring</a>
+				<a class="btn btn-outline-secondary mb-4" href="{{ route('mentoring.index') }}">
+					Lihat Daftar Mentoring
+				</a>
 			</section>
 		</div>
 	</main>	
