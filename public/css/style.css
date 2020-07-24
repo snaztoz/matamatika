@@ -96,3 +96,9 @@
 .site-shape-circle {
 	border-radius: 50%;
 }
+
+/* Mengganti tipe cursor menjadi pointer ketika hover */
+.site-hover-pointer {
+	cursor: pointer;
+}
+
