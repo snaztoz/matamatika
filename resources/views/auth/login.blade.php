@@ -57,11 +57,7 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        Lupa Password?
-                                    </a>
-                                @endif
+                                <a class="btn btn-link" href="{{ route('register') }}">Belum punya akun?</a>
                             </div>
                         </div>
                     </form>
