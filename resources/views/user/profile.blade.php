@@ -74,12 +74,13 @@
 						</a>
 					</li>
 		
+				@if($loop->last)</ol>@endif
+
 				@empty
-					<p><i>Belum ada kegiatan mentoring yang diikuti</i></p>
+				</ol>
+				<p class="mb-4"><i>Belum ada kegiatan mentoring yang diikuti</i></p>
 
 				@endforelse
-				</ol>
-
 				<a class="btn btn-outline-secondary mb-4" href="{{ route('mentoring.index') }}">
 					Lihat Daftar Mentoring
 				</a>
