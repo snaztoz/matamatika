@@ -66,7 +66,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#">
+                                <a class="nav-link text-light" href="{{ route('profile') }}">
                                     <img class="site-shape-circle site-navbar-user-image d-none d-md-inline border border-light" 
                                     src="{{ Auth::user()->profile_picture->profile_picture_link }}" 
                                     width="30px" height="30px" alt="user">
