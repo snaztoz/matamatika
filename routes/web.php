@@ -24,6 +24,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile', 'UserProfileController@user_profile')->name('profile');
 
 /**
+ * Rute untuk hal-hal terkait foto profile.
+ */
+Route::apiResource('profile-picture', 'ProfilePictureController');
+
+/**
  * Rute untuk melakukan registrasi kegiatan mentoring.
  */
 Route::prefix('mentoring-registration')->group(function() {
