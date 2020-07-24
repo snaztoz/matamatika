@@ -1,5 +1,9 @@
 @extends ('layouts.app')
 
+@section ('scripts')
+<script src="{{ asset('js/profile.js') }}" defer></script>
+@endsection
+
 @section ('content')
 <div class="container d-flex justify-content-center">
 	<main class="card col-md-8 p-0 site-border-radius-rounded-topleft">
@@ -7,10 +11,20 @@
 
 		<section class="card-header p-4 d-flex border-bottom border-light
 						site-border-radius-rounded-topleft">
-			<div class="col-6 col-lg-4 d-flex flex-column justify-content-center">
-				<div class="align-middle">
-					<img class="site-shape-circle col-12" src="{{ Auth::user()->profile_picture->profile_picture_link }}">
+			<div class="col-6 col-lg-4 ml-3 d-flex flex-column 
+						align-items-center justify-content-center">
+				<div style="width: 10rem; height: 10rem">
+					<img id="profile-pict" class="site-shape-circle site-hover-pointer w-100 h-100"
+						data-toggle="tooltip" data-placement="left" title="Ganti Foto Profil" 
+						src="{{ Auth::user()->profile_picture->profile_picture_link }}">
 				</div>
+				<form method="POST" action="{{ route('profile-picture.update', [
+									'profile_picture' => Auth::user()->profile_picture]) }}" 
+									enctype="multipart/form-data">
+					@csrf
+					@method('PUT')
+					<input id="profile-pict-hidden-input" type="file" name="pict" hidden>
+				</form>
 			</div>
 			<div class="p-3 d-flex flex-column justify-content-center">
 				<p class="h4">{{ Auth::user()->name }}</p>
