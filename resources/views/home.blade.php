@@ -30,7 +30,7 @@
         <main>
             <div style="position:relative">
                 <div class="site-navbar-clip">
-                    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark shadow-s">
+                    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                         <div class="container">
                             <a class="navbar-brand" href="{{ url('/') }}">
                                 <img src="{{ asset('/storage/images/Matamatika.png') }}" width="40" height="40" alt="Matamatika"> <span class="site-navbar-brand-name text-warning">Matamatika</span>
@@ -116,7 +116,7 @@
 
             <div style="position:relative">
                 <div class="site-navbar-clip">
-                    <nav class="navbar navbar-expand-md navbar-dark fixed-top site-bg-blue shadow-s">
+                    <nav class="navbar navbar-expand-md navbar-dark fixed-top site-bg-blue">
                         <div class="container">
                             <a class="navbar-brand" href="{{ url('/') }}">
                                 <img src="{{ asset('/storage/images/Matamatika.png') }}" width="40" height="40" alt="Matamatika"> <span class="site-navbar-brand-name">Matamatika</span>
