@@ -17,11 +17,13 @@ class MentoringRegistrationController extends Controller
     /**
      * Mendaftarkan user ke sebuah kegiatan mentoring.
      */
-    public function register(Mentoring $mentoring)
+    public function register(Mentoring $mentoring, Request $request)
     {
     	$mentoring->users()->attach(Auth::id());
         event(new NewUserRegisterMentoring($mentoring, Auth::user()));
-        
+        $request->session()->flash('registered',
+                'Pendaftaran berhasil! Pantau terus emailmu untuk info lebih lanjut!');
+
     	return redirect()->route('mentoring.index');
     }
 
