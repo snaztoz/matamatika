@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="d-lg-block col-lg-4 mr-lg-5 my-5 py-0 px-3 px-lg-0">
-                            <img class="w-100" src="{{ asset('/storage/svg/nonton_hp.svg') }}">
+                            <img class="w-100" src="{{ asset('/storage/svg/kolaborasi_online.svg') }}">
                         </div>
                     </div>
                 </section>
@@ -176,35 +176,37 @@
                 </div>
                 <div class="site-navbar-clear"></div>
 
-                <section class="py-5 px-0 container">
+                <section class="py-4 px-0 container">
                     <h1 class="text-center mb-5">
                         <strong>Kebutuhanmu, <span class="site-text-blue">kami ada</span></strong>
                     </h1>
                     <div class="d-lg-flex px-4 justify-content-between">
                         <div class="card p-4 mx-lg-3 mb-4 col">
-                            <div class="text-center mb-4">
-                                <img src="{{ asset('/storage/svg/banyak_orang.svg') }}">
+                            <div class="text-center mb-3 h-50">
+                                <img class="w-100" src="{{ asset('/storage/svg/laptop.svg') }}" 
+                                        height="100">
                             </div>
                             <div>
                                 <h5 class="text-center">
-                                    Bimbingan intensif via online (se-Indonesia) maupun 
-                                    offline (Solo dan sekitarnya)
+                                    Bimbingan intensif online maupun offline
                                 </h5>
                             </div>
                         </div>
                         <div class="card p-4 mx-lg-3 mb-4 col">
-                            <div class="text-center mb-4">
-                                <img src="{{ asset('/storage/svg/banyak_orang.svg') }}">
+                            <div class="text-center mb-3 h-50">
+                                <img class="w-100" src="{{ asset('/storage/svg/forum.svg') }}"
+                                        height="100">
                             </div>
                             <div>
                                 <h5 class="text-center">
-                                    Tanya jawab via <a href="{{ route('forum.index') }}">online</a>
+                                    Tanya jawab di <a href="{{ route('forum.index') }}">forum</a>
                                 </h5>
                             </div>
                         </div>
                         <div class="card p-4 mx-lg-3 mb-4 col">
-                            <div class="text-center mb-4">
-                                <img src="{{ asset('/storage/svg/banyak_orang.svg') }}">
+                            <div class="text-center mb-3 h-50">
+                                <img class="w-100" src="{{ asset('/storage/svg/mentor.svg') }}" 
+                                        height="100">
                             </div>
                             <div>
                                 <h5 class="text-center">
@@ -213,19 +215,20 @@
                             </div>
                         </div>
                         <div class="card p-4 mx-lg-3 mb-4 col">
-                            <div class="text-center mb-4">
-                                <img src="{{ asset('/storage/svg/banyak_orang.svg') }}">
+                            <div class="text-center mb-3 h-50">
+                                <img class="w-100" src="{{ asset('/storage/svg/seminar.svg') }}"
+                                        height="100">
                             </div>
                             <div>
                                 <h5 class="text-center">
-                                    Seminar online maupun offline
+                                    Seminar online dan juga offline
                                 </h5>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="py-5 d-lg-flex container">
+                <section class="py-4 d-lg-flex container">
                     <div class="py-3 order-1 col d-lg-flex flex-column justify-content-center">
                         <h1 class="mb-3">
                             <b><span class="site-text-blue">matematika</span>, milik semua orang</b>
@@ -240,11 +243,11 @@
                     </div>
 
                     <div class="order-0 col-lg-4 mr-lg-5">
-                        <img class="w-100" src="{{ asset('/storage/svg/kolaborasi_online.svg') }}">
+                        <img class="w-100" src="{{ asset('/storage/svg/math.svg') }}">
                     </div>
                 </section>
 
-                <section class="py-5 d-lg-flex container justify-content-around">
+                <section class="py-4 d-lg-flex container justify-content-around">
                     <div class="py-3 col-lg-6 d-lg-flex flex-column justify-content-center">
                         <h1 class="mb-4"><b>mengapa?</b></h1>
                         <h4 class="mb-3">
@@ -257,11 +260,11 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <img class="w-100" src="{{ asset('/storage/svg/kolaborasi_online.svg') }}">
+                        <img class="w-100" src="{{ asset('/storage/svg/school.svg') }}">
                     </div>
                 </section>
 
-                <section class="py-5 my-5 container d-flex justify-content-center">
+                <section class="py-5 my-3 container d-flex justify-content-center">
                     <div class="col-lg-8 p-4 d-md-flex justify-content-center">
                         <h1 class="mb-4 mr-md-3">Memiliki kesulitan? </h1>
                         <div><a class="btn btn-primary btn-lg" href="{{ route('forum.index') }}">
@@ -271,6 +274,22 @@
                 </section>
             </div>
         </main>
+
+        <footer class="bg-dark p-3 px-lg-5 d-flex flex-column flex-lg-row
+                    justify-content-center align-items-center">
+            <div class="order-lg-1 d-flex justify-content-center align-items-middle 
+                            col-8 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-0">
+                <a class="col-3 d-block text-center" href="https://facebook.com/groups/matamatika"><img 
+                    src="{{ asset('/storage/svg/logo-facebook.svg') }}" width="28px"></a>
+                <a class="col-3 d-block text-center" href="https://youtube.com/c/MATAMATIKA"><img 
+                    src="{{ asset('/storage/svg/logo-youtube.svg') }}" width="30px"></a>
+                <a class="col-3 d-block text-center" href="mailto:matamatikahebat@gmail.com"><img 
+                    src="{{ asset('/storage/svg/logo-gmail.svg') }}" width="28px"></a>
+            </div>
+            <div class="order-lg-0 mr-lg-auto text-light">
+                <p class="mb-0">Copyright &copy; 2020, MatamatikaHebat. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
