@@ -30,7 +30,7 @@
 
 </head>
 
-<body>
+<body style="position: relative;">
     <div id="app" class="root">
         <nav class="navbar navbar-expand-md navbar-dark site-bg-blue shadow-sm">
             <div class="container">
@@ -93,6 +93,25 @@
         <section class="py-4">
             @yield('content')
         </section>
+
+        <div style="width: 100%; height: 8rem"></div>
+
+        <footer class="bg-dark py-2 px-3 px-lg-5 d-flex flex-column flex-lg-row
+                    justify-content-center align-items-center"
+                style="position: absolute; bottom: 0; left: 0; width: 100%">
+            <div class="order-lg-1 d-flex justify-content-center align-items-middle 
+                            col-8 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-0">
+                <a class="col-3 d-block text-center" href="https://facebook.com/groups/matamatika"><img 
+                    src="{{ asset('/storage/svg/logo-facebook.svg') }}" width="28px"></a>
+                <a class="col-3 d-block text-center" href="https://youtube.com/c/MATAMATIKA"><img 
+                    src="{{ asset('/storage/svg/logo-youtube.svg') }}" width="30px"></a>
+                <a class="col-3 d-block text-center" href="mailto:matamatikahebat@gmail.com"><img 
+                    src="{{ asset('/storage/svg/logo-gmail.svg') }}" width="28px"></a>
+            </div>
+            <div class="order-lg-0 mr-lg-auto text-light">
+                <p class="mb-0">Copyright &copy; 2020, MatamatikaHebat. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
