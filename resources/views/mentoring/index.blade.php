@@ -2,6 +2,20 @@
 
 @section ('main')
 
+@if (Session::has('registered'))
+<div id="clear-target">
+	<div id="screen-cover" class="site-screen-cover"></div>
+	<div id="popup" class="site-registration-popup bg-light p-3 rounded
+			d-flex flex-column justify-content-center align-items-center">
+		<p class="site-popup-close-button h3">
+			<a id="close-popup" href="#" class="text-danger"><b>&times;</b></a>
+		</p>
+		<p class="h1 text-center text-success mb-3">&#10004;</p>
+		<p class="text-center h5">{{ Session::get('registered') }}</p>
+	</div>
+</div>
+@endif
+
 <div class="d-flex px-2 py-1 align-items-center">
 	<h4 class="">Kegiatan Mentoring</h4>
 	@if (Auth::check() && Auth::user()->name === 'admin')
@@ -47,5 +61,13 @@
 
 @endforelse
 </div>
+
+@if (Session::has('registered'))
+<script type="text/javascript">
+	document.querySelector('#close-popup').addEventListener('click', function() {
+		document.querySelector('#clear-target').innerHTML = '';
+	});
+</script>
+@endif
 
 @endsection
