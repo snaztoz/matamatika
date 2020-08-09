@@ -176,7 +176,7 @@
                 </div>
                 <div class="site-navbar-clear"></div>
 
-                <section class="py-4 px-0 container">
+                <section class="pt-2 pb-4 px-0 container">
                     <h1 class="text-center mb-5">
                         <strong>Kebutuhanmu, <span class="site-text-blue">kami ada</span></strong>
                     </h1>
