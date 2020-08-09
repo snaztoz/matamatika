@@ -16,13 +16,8 @@
 /* Karena style bawaan untuk .border-warning dari 
  * bootstrap sangat tipis garisnya.
  */
-.site-border-left-red {
-	border-left: 2px solid #8C0703;
-}
-
-.site-border-top-grey {
-	border-top: 2px solid #CCCCCC; 
-}
+.site-border-left-red { border-left: 2px solid #8C0703; }
+.site-border-top-grey { border-top: 2px solid #CCCCCC; }
 
 /**
  * Untuk mengatur ukuran dari tiap jenis editor 
@@ -34,7 +29,6 @@
 #answer-typing-area {
 	min-height: 75px;
 }
-
 .reply-typing-area {
 	height: 2.5rem;
 	padding: 0.4rem;
@@ -44,7 +38,6 @@
 	resize: none;
 	overflow-y: hidden;
 }
-
 #mentoring-desc-typing-area {
 	height: 2.5rem;
 	resize: none;
@@ -102,3 +95,25 @@
 	cursor: pointer;
 }
 
+/* ======================================================
+ * 					  Khusus Homepage
+ * ======================================================
+ */
+
+.site-navbar-clear {
+	width: 100%;
+	height: 4rem;
+}
+
+.site-navbar-clip {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	clip: rect(auto, auto, auto, auto);
+}
+
+.site-height-70vh { height: 70vh; }
+
+.site-text-blue { color: #309B9C; }
