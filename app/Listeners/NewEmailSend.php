@@ -34,7 +34,7 @@ class NewEmailSend
          * kegiatan mentoring terkait.
          */   
         foreach ($event->mentoring->users->all() as $participant) {
-            Mail::to($participant)->send(new MentoringUpdate($mail));
+            Mail::to($participant)->queue(new MentoringUpdate($mail));
         }
     }
 }

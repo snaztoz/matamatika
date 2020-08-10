@@ -33,7 +33,7 @@ class SingleEmailSend
          */
         if ($event->mentoring->mails->count() != 0) {
             $mail = $event->mentoring->mails()->latest()->first();
-            Mail::to($event->user)->send(new MentoringUpdate($mail));
+            Mail::to($event->user)->queue(new MentoringUpdate($mail));
         }
     }
 }
