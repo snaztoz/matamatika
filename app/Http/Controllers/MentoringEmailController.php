@@ -6,6 +6,7 @@ use App\Mentoring;
 use App\Events\NewMentoringMail;
 use App\Mail\MentoringUpdate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class MentoringEmailController extends Controller
 {
@@ -17,6 +18,10 @@ class MentoringEmailController extends Controller
 	 */
     public function store(Request $request, Mentoring $mentoring)
     {
+        if (Gate::denies('access-mentoring-backend')) {
+            return redirect()->route('mentoring.index');
+        }
+
         $request->validate(['mail' => 'required']);
         
         $mentoring->mails()->create([

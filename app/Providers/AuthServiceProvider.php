@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('access-mentoring-backend', function ($user) {
-            return $user->name === 'admin';
+            return $user->name === env('APP_ADMIN_NAME', 'admin');
         });
     }
 }

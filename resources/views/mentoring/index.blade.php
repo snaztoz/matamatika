@@ -18,7 +18,7 @@
 
 <div class="d-flex px-2 py-1 align-items-center">
 	<h4 class="">Kegiatan Mentoring</h4>
-	@if (Auth::check() && Auth::user()->name === 'admin')
+	@if (Auth::check() && Auth::user()->name === env('APP_ADMIN_NAME', 'admin'))
 	<p class="ml-auto mb-0"><a class="btn btn-primary" href="{{ route('mentoring.create') }}">Buat Baru+</a></p>
 	@endif	
 </div>
@@ -30,7 +30,7 @@
 			<h5>{{ $mentoring->title }}</h5>
 			<p>{{ $mentoring->description }}</p>
 
-		@if (Auth::check() && Auth::user()->name === 'admin')
+		@if (Auth::check() && Auth::user()->name === env('APP_ADMIN_NAME', 'admin'))
 			<a href="{{ route('mentoring.show', ['mentoring' => $mentoring] )}}"
 				class="btn btn-info">
 				Update+
